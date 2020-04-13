@@ -67,7 +67,7 @@ static size_t first_read(struct ext4_inode *inode, char *buf, size_t size, off_t
     }
 }
 
-int op_read(const char *path, char *buf, size_t size, off_t offset,
+int op_read(const char *path, char *buf, size_t size, fuse_off_t offset,
             struct fuse_file_info *fi)
 {
     size_t un_offset = (size_t)offset;

@@ -16,7 +16,8 @@
     __x < __y ? __x : __y;              \
 })
 
-#define STATIC_ASSERT(e) static char const static_assert[(e) ? 1 : -1] = {'!'}
+// #define STATIC_ASSERT(e) static char const static_assert[(e) ? 1 : -1] = {'!'}
+#define STATIC_ASSERT(e) 
 
 #include <limits.h>
 #if ULONG_MAX == 0xFFFFFFFF
