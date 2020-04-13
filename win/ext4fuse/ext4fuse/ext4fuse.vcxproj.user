@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>-s \\.\HarddiskVolume7 mnt</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>d:\Dev\ext4fuse\win\ext4fuse\x64\Debug</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=c:\Program Files (x86)\WinFsp\bin
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommandArguments>-s \\.\HarddiskVolume7 mnt</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>d:\Dev\ext4fuse\win\ext4fuse\x64\Debug</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=c:\Program Files (x86)\WinFsp\bin
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>-s \\.\HarddiskVolume7 mnt</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>d:\Dev\ext4fuse\win\ext4fuse\x64\Debug</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=c:\Program Files (x86)\WinFsp\bin
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>-s \\.\HarddiskVolume7 mnt</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>d:\Dev\ext4fuse\win\ext4fuse\x64\Debug</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=c:\Program Files (x86)\WinFsp\bin
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
