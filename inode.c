@@ -13,7 +13,6 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <inttypes.h>
-#include <unistd.h>
 
 #include "dcache.h"
 #include "disk.h"

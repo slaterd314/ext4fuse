@@ -14,9 +14,8 @@
 
 #include "inode.h"
 #include "logging.h"
-#include "ops.h"
 
-int op_getattr(const char *path, struct stat*stbuf)
+int op_getattr(const char *path, struct stat *stbuf)
 {
     struct ext4_inode inode;
     int ret = 0;
@@ -38,9 +37,9 @@ int op_getattr(const char *path, struct stat*stbuf)
     stbuf->st_blocks = inode.i_blocks_lo;
     stbuf->st_uid = inode.i_uid;
     stbuf->st_gid = inode.i_gid;
-    stbuf->st_atim.tv_sec = inode.i_atime;
-    stbuf->st_mtim.tv_sec = inode.i_mtime;
-    stbuf->st_ctim.tv_sec = inode.i_ctime;
+    stbuf->st_atime = inode.i_atime;
+    stbuf->st_mtime = inode.i_mtime;
+    stbuf->st_ctime = inode.i_ctime;
 
     return 0;
 }

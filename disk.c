@@ -19,7 +19,11 @@
 #include "disk.h"
 #include "logging.h"
 
-#if defined(__FreeBSD__) || defined(WIN32)
+#if defined(__FreeBSD__) && !defined(__APPLE__)
+#define ALIGNED_PREAD 1
+#endif
+
+#if defined(ALIGNED_PREAD)
 #include <string.h>
 #endif
 
@@ -29,10 +33,8 @@ static int disk_fd = -1;
 
 static int pread_wrapper(int disk_fd, void *p, size_t size, off_t where)
 {
-#if (defined(WIN32) || defined(__FreeBSD__)) && !defined(__APPLE__)
-#ifdef WIN32
-#define PREAD_BLOCK_SIZE 512
-#else
+#ifdef ALIGNED_PREAD
+#ifndef PREAD_BLOCK_SIZE
 #define PREAD_BLOCK_SIZE 1024
 #endif
     /* FreeBSD needs to read aligned whole blocks.
