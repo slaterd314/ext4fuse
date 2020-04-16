@@ -84,11 +84,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert;DEFAULT_LOG_FILE="ext4fuse.log";_CRT_DECLARE_NONSTDC_NAMES=0;stat=fuse_stat;strdup=_strdup</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
       <SuppressStartupBanner>false</SuppressStartupBanner>
+      <ForcedIncludeFiles>$(ProjectDir)win_compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,11 +102,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert;DEFAULT_LOG_FILE="ext4fuse.log";_CRT_DECLARE_NONSTDC_NAMES=0;stat=fuse_stat;strdup=_strdup</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
       <SuppressStartupBanner>false</SuppressStartupBanner>
+      <ForcedIncludeFiles>$(ProjectDir)win_compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,11 +122,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert;_CRT_DECLARE_NONSTDC_NAMES=0;stat=fuse_stat;strdup=_strdup</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
       <SuppressStartupBanner>false</SuppressStartupBanner>
+      <ForcedIncludeFiles>$(ProjectDir)win_compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,11 +144,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert;_CRT_DECLARE_NONSTDC_NAMES=0;stat=fuse_stat;strdup=_strdup</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
       <SuppressStartupBanner>false</SuppressStartupBanner>
+      <ForcedIncludeFiles>$(ProjectDir)win_compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -191,6 +195,7 @@
     <ClInclude Include="execinfo.h" />
     <ClInclude Include="libgen.h" />
     <ClInclude Include="unistd.h" />
+    <ClInclude Include="win_compat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

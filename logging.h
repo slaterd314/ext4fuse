@@ -21,10 +21,8 @@
 #define INFO(...)               __LOG(LOG_INFO, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #define DEBUG(...)              __LOG(LOG_DEBUG, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 
-#ifdef NDEBUG
+#ifndef DEFAULT_LOG_FILE
 #define DEFAULT_LOG_FILE        NULL
-#else
-#define DEFAULT_LOG_FILE        "ext4fuse.log"
 #endif
 
 #ifndef NDEBUG

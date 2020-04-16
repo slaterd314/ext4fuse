@@ -9,7 +9,6 @@
 
 
 #include <errno.h>
-#include <unistd.h>
 #include "common.h"
 #include "inode.h"
 #include "logging.h"

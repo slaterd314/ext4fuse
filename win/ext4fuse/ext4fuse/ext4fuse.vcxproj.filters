@@ -122,5 +122,8 @@
     <ClInclude Include="..\..\..\types\ext4_super.h">
       <Filter>Header Files\types</Filter>
     </ClInclude>
+    <ClInclude Include="win_compat.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

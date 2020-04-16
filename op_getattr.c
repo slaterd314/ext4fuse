@@ -16,14 +16,14 @@
 #include "logging.h"
 #include "ops.h"
 
-int op_getattr(const char *path, struct fuse_stat*stbuf)
+int op_getattr(const char *path, struct stat*stbuf)
 {
     struct ext4_inode inode;
     int ret = 0;
 
     DEBUG("getattr(%s)", path);
 
-    memset(stbuf, 0, sizeof(struct fuse_stat));
+    memset(stbuf, 0, sizeof(struct stat));
     ret = inode_get_by_path(path, &inode);
 
     if (ret < 0) {
