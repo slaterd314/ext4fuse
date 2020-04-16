@@ -17,10 +17,11 @@
 })
 
 // #define STATIC_ASSERT(e) static char const static_assert[(e) ? 1 : -1] = {'!'}
-#define STATIC_ASSERT(e) 
+#define STATIC_ASSERT(e) typedef char static_assert_[(e)?1 : -1]
+// #define STATIC_ASSERT(e) 
 
 #include <limits.h>
-#if ULONG_MAX == 0xFFFFFFFF
+#if ULONG_MAX == 0xFFFFFFFF && !defined(_M_X64)
 #define __32BITS
 #else
 #define __64BITS

@@ -24,7 +24,7 @@ static char *get_printable_name(char *s, struct ext4_dir_entry_2 *entry)
 }
 
 int op_readdir(const char *path, void *buf, fuse_fill_dir_t filler,
-                       fuse_off_t offset, struct fuse_file_info *fi)
+                       off_t offset, struct fuse_file_info *fi)
 {
     DEBUG("readdir");
 

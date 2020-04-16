@@ -216,22 +216,24 @@ uint32_t inode_get_idx_by_path(const char *path)
 
         if (path_len == 0) break;
         inode_get_by_number(inode_idx, &inode);
+        if (S_ISDIR(inode.i_mode)) {
 
-        inode_dir_ctx_reset(dctx, &inode);
-        while ((dentry = inode_dentry_get(&inode, offset, dctx))) {
-            offset += dentry->rec_len;
+            inode_dir_ctx_reset(dctx, &inode);
+            while ((dentry = inode_dentry_get(&inode, offset, dctx))) {
+                offset += dentry->rec_len;
 
-            if (!dentry->inode) continue;
-            if (path_len != dentry->name_len) continue;
-            if (memcmp(path, dentry->name, dentry->name_len)) continue;
+                if (!dentry->inode) continue;
+                if (path_len != dentry->name_len) continue;
+                if (memcmp(path, dentry->name, dentry->name_len)) continue;
 
-            inode_idx = dentry->inode;
-            DEBUG("Lookup following inode %d", inode_idx);
+                inode_idx = dentry->inode;
+                DEBUG("Lookup following inode %d", inode_idx);
 
-            if (S_ISDIR(inode.i_mode)) {
-                dc_entry = dcache_insert(dc_entry, path, path_len, inode_idx);
+                if (S_ISDIR(inode.i_mode)) {
+                    dc_entry = dcache_insert(dc_entry, path, path_len, inode_idx);
+                }
+                break;
             }
-            break;
         }
 
         /* Couldn't find the entry at all */

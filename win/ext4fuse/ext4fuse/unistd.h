@@ -4,12 +4,15 @@
 #include <io.h>
 #include <fcntl.h>
 #include <sys/types.h>
+#include <fuse.h>
 
 typedef ptrdiff_t ssize_t;
 
 ssize_t pread(int fd, void *buf, size_t count, off_t offset);
 
-#define open _open
+#define open win_open
+int win_open(const char* path, int flags);
+
 
 #define	S_ISDIR(m)	((m & 0170000) == 0040000)	/* directory */
 #define	S_ISCHR(m)	((m & 0170000) == 0020000)	/* char special */
@@ -21,10 +24,8 @@ ssize_t pread(int fd, void *buf, size_t count, off_t offset);
 #define	S_ISSOCK(m)	((m & 0170000) == 0140000)	/* socket */
 #endif
 
-#ifdef O_RDONLY
-#undef O_RDONLY
+#ifndef O_RDONLY
+#define O_RDONLY _O_RDONLY
 #endif
-
-#define O_RDONLY (_O_RDONLY|_O_BINARY)
 
 #endif // UNISTD_H

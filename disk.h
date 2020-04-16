@@ -10,7 +10,8 @@
 #define disk_ctx_read(__ctx, __s, __p)      __disk_ctx_read(__ctx, __s, __p, __func__, __LINE__)
 #define disk_read_type(__where, __t)        ({                                          \
     __t ret;                                                                            \
-    ASSERT(__disk_read(__where, sizeof(__t), &ret, __func__, __LINE__) == sizeof(__t)); \
+    int read = __disk_read(__where, sizeof(__t), &ret, __func__, __LINE__);             \
+    ASSERT(read == sizeof(__t));                                                        \
     ret;                                                                                \
 })
 

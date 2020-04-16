@@ -29,27 +29,23 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>ClangCL</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -88,33 +84,34 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);C:\Users\dslat\source\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;c:\Users\dslat\source\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libpthreadVCE3d.lib;%(AdditionalDependencies);libfuse.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;$(ProjectDir)..\..\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpthreadVCE3d.lib;%(AdditionalDependencies);winfsp-x86.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);C:\Users\dslat\source\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;c:\Users\dslat\source\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libpthreadVCE3d.lib;%(AdditionalDependencies);libfuse.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;$(ProjectDir)..\..\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpthreadVCE3d.lib;%(AdditionalDependencies);winfsp-x64.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -123,19 +120,19 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);C:\Users\dslat\source\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;c:\Users\dslat\source\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libpthreadVCE3.lib;%(AdditionalDependencies);libfuse.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;$(ProjectDir)..\..\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpthreadVCE3.lib;%(AdditionalDependencies);winfsp-x86.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,19 +141,19 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);EXT4FUSE_VERSION="v0.1.3-18-gab9ae62";_CRT_SECURE_NO_WARNINGS=1;off_t=__int64;_OFF_T_DEFINED=1;_off_t=long;FUSE_USE_VERSION=26;_FILE_OFFSET_BITS=64;WIN32;static_assert=_Static_assert</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);C:\Users\dslat\source\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\WinFsp\inc\fuse;$(ProjectDir);$(ProjectDir)..\..\PTHREADS-BUILT\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Xclang -std=gnu11 -Xclang -Wno-deprecated-declarations %(AdditionalOptions)</AdditionalOptions>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;c:\Users\dslat\source\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libpthreadVCE3.lib;%(AdditionalDependencies);libfuse.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\WinFsp\lib;$(ProjectDir)..\..\PTHREADS-BUILT\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpthreadVCE3.lib;%(AdditionalDependencies);winfsp-x64.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -185,6 +182,15 @@
     <ClInclude Include="..\..\..\logging.h" />
     <ClInclude Include="..\..\..\ops.h" />
     <ClInclude Include="..\..\..\super.h" />
+    <ClInclude Include="..\..\..\types\e4f_dcache.h" />
+    <ClInclude Include="..\..\..\types\ext4_basic.h" />
+    <ClInclude Include="..\..\..\types\ext4_dentry.h" />
+    <ClInclude Include="..\..\..\types\ext4_extents.h" />
+    <ClInclude Include="..\..\..\types\ext4_inode.h" />
+    <ClInclude Include="..\..\..\types\ext4_super.h" />
+    <ClInclude Include="execinfo.h" />
+    <ClInclude Include="libgen.h" />
+    <ClInclude Include="unistd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

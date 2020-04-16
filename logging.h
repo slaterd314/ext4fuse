@@ -21,7 +21,11 @@
 #define INFO(...)               __LOG(LOG_INFO, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 #define DEBUG(...)              __LOG(LOG_DEBUG, __FUNCTION__, __LINE__, ##__VA_ARGS__);
 
+#ifdef NDEBUG
 #define DEFAULT_LOG_FILE        NULL
+#else
+#define DEFAULT_LOG_FILE        "ext4fuse.log"
+#endif
 
 #ifndef NDEBUG
 #define DEFAULT_LOG_LEVEL LOG_DEBUG
@@ -33,7 +37,7 @@
 })
 #else
 #define DEFAULT_LOG_LEVEL LOG_ERR
-#define ASSERT(assertion)       do { } while(0)
+#define ASSERT(assertion)       do { const int __unused=((assertion)?1:0);((void)__unused); } while(0)
 #endif
 
 void __LOG(int level, const char *func, int line, const char *format, ...);

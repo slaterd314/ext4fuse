@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\win">
+      <UniqueIdentifier>{cc7561c2-be3a-4fc9-9faf-7f984b70ab7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\win">
+      <UniqueIdentifier>{7b6c828f-3783-4fc6-bec2-8c98ae2a9ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\types">
+      <UniqueIdentifier>{d1e96d32-1f0e-440d-b9ec-3b7f331f45cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\dcache.c">
@@ -54,11 +63,11 @@
     <ClCompile Include="..\..\..\super.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="backtrace.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pread.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\win</Filter>
+    </ClCompile>
+    <ClCompile Include="backtrace.c">
+      <Filter>Source Files\win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +94,33 @@
     </ClInclude>
     <ClInclude Include="..\..\..\super.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="execinfo.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="libgen.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="unistd.h">
+      <Filter>Header Files\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\e4f_dcache.h">
+      <Filter>Header Files\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\ext4_basic.h">
+      <Filter>Header Files\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\ext4_dentry.h">
+      <Filter>Header Files\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\ext4_extents.h">
+      <Filter>Header Files\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\ext4_inode.h">
+      <Filter>Header Files\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\types\ext4_super.h">
+      <Filter>Header Files\types</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
