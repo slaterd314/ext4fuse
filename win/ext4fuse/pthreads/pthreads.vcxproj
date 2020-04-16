@@ -65,29 +65,30 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w64d" VC
+nmake EXTRAVERSION="-w64d" VC-debug
 </NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w64d" /E clean VC
+nmake EXTRAVERSION="-w64d" /E clean VC-debug
 </NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>cd $(ProjectDir)..\..\pthreads4w
 nmake EXTRAVERSION="-w64d" realclean
 
 </NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)..\..\pthreads4w\pthreadVC3-w64d.dll</NMakeOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w32d" all
+nmake EXTRAVERSION="-w32d" VC-debug
 </NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w32d" realclean
-nmake EXTRAVERSION="-w32d" all
+nmake EXTRAVERSION="-w32d" /E clean VC-debug
 </NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>cd $(ProjectDir)..\..\pthreads4w
 nmake EXTRAVERSION="-w32d" realclean
 
 </NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)..\..\pthreads4w\pthreadVC3-w32d.dll</NMakeOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
@@ -102,20 +103,21 @@ nmake EXTRAVERSION="-w32" all
 nmake EXTRAVERSION="-w32" realclean
 
 </NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)..\..\pthreads4w\pthreadVC3-w32.dll</NMakeOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <NMakeBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w64" all
+nmake EXTRAVERSION="-w64" VC
 </NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\pthreads4w
-nmake EXTRAVERSION="-w64" realclean
-nmake EXTRAVERSION="-w64" all
+nmake EXTRAVERSION="-w64" /E clean VC
 </NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>cd $(ProjectDir)..\..\pthreads4w
 nmake EXTRAVERSION="-w64" realclean
 
 </NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)..\..\pthreads4w\pthreadVC3-w64.dll</NMakeOutput>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
