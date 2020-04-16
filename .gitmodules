@@ -1,0 +1,3 @@
+[submodule "win/pthreads4w"]
+	path = win/pthreads4w
+	url = https://git.code.sf.net/p/pthreads4w/code
